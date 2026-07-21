@@ -14,11 +14,17 @@ cp -avf "/ctx/system_files"/. /
 
 # this installs a package from fedora repos
 dnf5 install -y tmux
-dnf5 install -y vim
-dnf5 install -y fuse-libs
-dnf5 install -y printer-driver-brlaser
 
+# Base packages from Fedora repos - common to all versions
+FEDORA_PACKAGES=(
+	fastfetch
+	printer-driver-brlaser
+	lm_sensors
+	fuse-libs
+	vim
+)
 
+dnf -y install "${FEDORA_PACKAGES[@]}"
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
