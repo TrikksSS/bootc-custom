@@ -14,6 +14,10 @@ cp -avf "/ctx/system_files"/. /
 
 # this installs a package from fedora repos
 dnf5 install -y tmux
+dnf5 install -y vim
+dnf5 install -y fuse-libs
+dnf5 install -y printer-driver-brlaser
+
 
 # Use a COPR Example:
 #
